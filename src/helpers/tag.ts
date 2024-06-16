@@ -46,7 +46,7 @@ export class Tag {
   }
 
   private createTag(currentProjectVersion: string) {
-    this.commander.exec(`git tag -a ${currentProjectVersion} -m "Automatic Release version ${currentProjectVersion}`)
+    this.commander.exec(`git tag -a ${currentProjectVersion} -m "Automatic Release version ${currentProjectVersion}"`)
     this.commander.exec(`git push origin ${currentProjectVersion}`)
   }
 

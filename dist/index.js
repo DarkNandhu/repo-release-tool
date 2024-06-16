@@ -237,7 +237,7 @@ class Tag {
         return this.version;
     }
     createTag(currentProjectVersion) {
-        this.commander.exec(`git tag -a ${currentProjectVersion} -m "Automatic Release version ${currentProjectVersion}`);
+        this.commander.exec(`git tag -a ${currentProjectVersion} -m "Automatic Release version ${currentProjectVersion}"`);
         this.commander.exec(`git push origin ${currentProjectVersion}`);
     }
     currentProjectVersion() {
