@@ -1,0 +1,12 @@
+name: 'Release Tool'
+description: 'A GitHub Action to create a tag and release'
+inputs:
+  github_token:
+    description: 'GitHub token'
+    required: true
+  language:
+    description: 'Project language (e.g., flutter, node)'
+    required: true
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
