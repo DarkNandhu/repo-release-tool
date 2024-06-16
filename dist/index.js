@@ -289,8 +289,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const core = __importStar(__nccwpck_require__(2186));
 const release_1 = __nccwpck_require__(9999);
+const command_1 = __nccwpck_require__(837);
+const command = new command_1.Command();
+const setupGit = () => {
+    command.exec(`git config user.email "github-actions-bot@users.noreply.github.com"`);
+    command.exec(`git config user.name "github-actions-bot"`);
+};
 const run = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
+        setupGit();
         const githubToken = core.getInput("github_token");
         const language = core.getInput("language");
         if (!githubToken) {
